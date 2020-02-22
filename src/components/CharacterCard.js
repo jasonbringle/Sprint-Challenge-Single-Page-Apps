@@ -15,17 +15,17 @@ height: auto;
 width: 100px;
 `
 export default function CharacterCard(props) {
-  console.log('CCprops', props)
 
   const paramItemId = props.match.params.id;
   // console.log('paramter ID', paramItemId)
 
-  const character = props.chars.find(item => {
+  const character = props.charData.find(item => {
     return item.id === Number(paramItemId);
   });
   console.log('character', character)
 
 
+  // console.log('CCprops', props.charData)
  
       return character ? (
       <Card>
