@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Links = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const HeaderStyle = styled.div`
   border-bottom: 3px solid black;
 `;
 
-export default function Header() {
+export default function Header(props) {
   return (
     <HeaderStyle className="ui centered">
       <header>
@@ -28,9 +28,9 @@ export default function Header() {
       <Links>
         <LinkButton to="/">HOME!</LinkButton>
         <LinkButton to="/characterlist">CAST!</LinkButton>
-        {/* <LinkButton to="/locate">PLACES!</LinkButton>
+        <LinkButton to="/locate">PLACES!</LinkButton>
         <LinkButton to="/episodes">EPISODES!</LinkButton>
-        <LinkButton to="/search">SEARCH!</LinkButton> */}
+        <LinkButton to="/search">SEARCH!</LinkButton>
       </Links>
     </HeaderStyle>
   );
