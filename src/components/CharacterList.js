@@ -1,7 +1,8 @@
 import React, {  useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import axios from 'axios'
+import CharacterCard from './CharacterCard'
 
 const StyledLink = styled(Link)`
 display: flex;
@@ -34,9 +35,16 @@ export default function CharacterList() {
 
   return (
     <CharList>
+      <Route
+        path="/characterlist/:id" render={routeProps =>{
+          return <CharacterCard {...routeProps} chars={chars} />;
+        }}
+      />
       {chars.map((char,index) =>{
         return (<StyledLink key={index} to={`/characterList/${char.id}`}>{char.name}</StyledLink>)
       })}  
+
+      
     </CharList>
   );
 }

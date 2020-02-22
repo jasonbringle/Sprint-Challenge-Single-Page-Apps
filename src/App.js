@@ -3,7 +3,7 @@ import Header from "./components/Header.js";
 // import axios from 'axios'
 import WelcomePage from './components/WelcomePage'
 import { Route } from "react-router-dom";
-import CharacterCard from './components/CharacterCard'
+// import CharacterCard from './components/CharacterCard'
 import CharacterList from './components/CharacterList'
 
 
@@ -14,9 +14,7 @@ export default function App() {
     <main>
       <Header />
       <Route exact path='/' component={WelcomePage}/>
-      <Route
-        path="/characterlist/:id" component ={CharacterCard}
-      />
+      
       <Route
         path="/characterlist" component={CharacterList}
       />

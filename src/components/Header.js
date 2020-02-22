@@ -28,7 +28,9 @@ export default function Header() {
       <Links>
         <LinkButton to="/">HOME!</LinkButton>
         <LinkButton to="/characterlist">CAST!</LinkButton>
-        
+        {/* <LinkButton to="/locate">PLACES!</LinkButton>
+        <LinkButton to="/episodes">EPISODES!</LinkButton>
+        <LinkButton to="/search">SEARCH!</LinkButton> */}
       </Links>
     </HeaderStyle>
   );
