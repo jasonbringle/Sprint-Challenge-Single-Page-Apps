@@ -1,6 +1,9 @@
 import React, { useState,useEffect } from "react";
 import Header from "./components/Header.js";
 import axios from 'axios'
+import WelcomePage from './components/WelcomePage'
+import { Route } from "react-router-dom";
+
 
 export default function App() {
 
@@ -21,6 +24,7 @@ console.log('chars', chars)
   return (
     <main>
       <Header />
+      <Route exact path='/' component={WelcomePage}/>
     </main>
   );
 }
