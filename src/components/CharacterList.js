@@ -1,8 +1,6 @@
-import React, {  useState, useEffect } from "react";
-import { Link, Route } from 'react-router-dom'
+import React from "react";
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import axios from 'axios'
-import CharacterCard from './CharacterCard'
 
 const StyledLink = styled(Link)`
 display: flex;
@@ -16,35 +14,15 @@ display: flex;
 flex-direction: column;
 align-items:center;
 padding:20px;
+
 `
-export default function CharacterList() {
-
-  const [chars, setChar] = useState([]);
-
-
-  useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character/`)
-      .then(response => {
-        setChar(response.data.results);
-      })
-      .catch(error => {
-        console.log("error", error);
-      });
-  }, []);
-
+export default function CharacterList(props) {
+  console.log('props char', props.chars)
   return (
     <CharList>
-      <Route
-        path="/characterlist/:id" render={routeProps =>{
-          return <CharacterCard {...routeProps} chars={chars} />;
-        }}
-      />
-      {chars.map((char,index) =>{
+      {props.chars.map((char,index) =>{
         return (<StyledLink key={index} to={`/characterList/${char.id}`}>{char.name}</StyledLink>)
       })}  
-
-      
     </CharList>
   );
 }
